@@ -1,0 +1,63 @@
+package tictactoe;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class TicTacToe extends JFrame
+{
+	private static final long serialVersionUID = 1L;
+	private int widht = 900;
+	private int height = 900;
+	
+	private JPanel panelTop;
+	private JPanel panelLeft;
+	private JLabel labelLeft;
+
+	public TicTacToe()
+	{
+		panelTop = new JPanel();
+		panelLeft = new JPanel();
+		labelLeft = new JLabel("Player 1");
+		labelLeft.setFont(new Font("Arial", NORMAL, 30));
+		
+		setTitle("Graphics");
+		
+		
+		this.setLayout(new BorderLayout());
+		
+		panelTop.setBackground(Color.BLUE);
+		panelTop.setPreferredSize(new Dimension(50,50));
+		this.add(panelTop,BorderLayout.NORTH);
+		
+		panelLeft.setBackground(Color.GRAY);
+		panelLeft.setPreferredSize(new Dimension(150,150));
+		panelLeft.setLayout(new BorderLayout());
+		panelLeft.add(labelLeft, BorderLayout.CENTER);
+		this.add(panelLeft,BorderLayout.WEST);
+		
+		this.add(new Map());
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setSize(this.widht,this.height);
+		setResizable(false);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		this.widht = JFrame.WIDTH;
+		this.height = JFrame.HEIGHT;
+		System.out.println(this.height+"/"+this.widht);
+	}
+
+	public static void main(String[] args)
+	{
+
+		new TicTacToe();
+	}
+
+}

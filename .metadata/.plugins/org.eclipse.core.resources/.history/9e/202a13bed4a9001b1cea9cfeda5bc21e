@@ -1,0 +1,95 @@
+package tictactoe;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JPanel;
+
+public class Array  extends JPanel implements MouseListener
+{
+	private static final long serialVersionUID = 1L;
+	
+	private String character;
+	private int x;
+	private int y;
+	private int id;
+	private int width;
+	private int height;
+
+	public Array(int _id, int _x, int _y) 
+	{
+		this.id = _id;
+		this.x = _x;
+		this.y = _y;
+		this.width = 40;
+		this.height = 40;
+		this.character = "";
+		addMouseListener(this);
+	}
+	
+	void setCharachter(String c)
+	{
+		if(this.character.equals(""))
+		{
+			this.character = c;
+			repaint();
+		}
+	}
+	
+	
+	public void paint(Graphics g)
+	{
+		super.paint(g);
+		g.setColor(Color.BLACK);
+		g.drawRect(this.x,this.y,this.width,this.height);
+		g.setColor(Color.GREEN);
+		g.drawString(this.character, x+15, y+25);
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		
+		if(Map.index<9)
+		{
+			System.out.println(id+" clicked");
+			if(Map.index%2==0)
+				Map.arrays.get(this.id).setCharachter("X");
+			else if(Map.index%2==1)
+				Map.arrays.get(this.id).setCharachter("O");
+			Map.index++;
+		}
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

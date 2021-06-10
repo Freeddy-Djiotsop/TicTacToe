@@ -1,0 +1,31 @@
+package tictactoe;
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+
+public class Map extends JPanel
+{
+	private static final long serialVersionUID = 1L;
+	
+	public Map() 
+	{
+		setLayout(new GridLayout(3, 3));
+		setPreferredSize(new Dimension(300, 300));
+		for(int i=0; i<9; i++) add(new Array(i, 10, 0, ' '));
+	}
+	
+	private void fillMap()
+	{
+		
+		for(int i=0, index=0; i<3; i++)
+		{
+			for(int j=0; j<3; j++)
+			{
+//				this.add(new Array(index++, _x, _y, w, h, c))
+			}
+		}
+	}
+
+}

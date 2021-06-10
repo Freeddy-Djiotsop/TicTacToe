@@ -1,0 +1,34 @@
+package tictactoe;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class Array  extends JPanel
+{
+	private static final long serialVersionUID = 1L;
+	
+	private char character;
+	private int x;
+	private int y;
+	private int id;
+	private int width;
+	private int height;
+
+	public Array(int _id, int _x, int _y, int w, int h, char c) 
+	{
+		this.id = _id;
+		this.x = _x;
+		this.y = _y;
+		this.width = w;
+		this.height = h;
+		this.character = c;		
+	}
+	
+	
+	public void paint(Graphics g)
+	{
+		g.drawRect(this.x,this.y,50,50);
+	}
+
+}
